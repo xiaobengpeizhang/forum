@@ -26,9 +26,11 @@
                 <div class="blog-post">
                     <h2 class="blog-post-title">{{ $discussion->title }}</h2>
                     <p class="blog-post-meta">创建于 {{ $discussion->created_at }} 楼主：<a href="#"> {{ $discussion->user->name }}</a></p>
-                    <p>{{ $discussion->body }}</p>
+                    {!! htmlspecialchars_decode($html) !!}
                 </div>
             </div>
         </div>
+        <hr>
+        <button onclick="history.go(-1)" class="btn btn-primary"><span class="glyphicon glyphicon-backward"></span> 返回</button>
     </div>
 @endsection

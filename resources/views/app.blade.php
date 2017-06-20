@@ -20,12 +20,17 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="/"><span class="glyphicon glyphicon-home"></span> 首页</a></li>
+                <li><a href="/"><span class="glyphicon glyphicon-home"></span> 首页</a></li>
 
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> 登录</a></li>
-                <li><a href="/register"><span class="glyphicon glyphicon-exclamation-sign"></span> 注册</a></li>
+                @if(\Illuminate\Support\Facades\Auth::user())
+                    <li><a style="font-size: 17px">{{ \Illuminate\Support\Facades\Auth::user()->name }}</a></li>
+                    <li><a href="/logout"><span class="glyphicon glyphicon-log-out"> 退出</span></a></li>
+                @else
+                    <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> 登录</a></li>
+                    <li><a href="/register"><span class="glyphicon glyphicon-exclamation-sign"></span> 注册</a></li>
+                @endif
             </ul>
         </div><!--/.nav-collapse -->
     </div>

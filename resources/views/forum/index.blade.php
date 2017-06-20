@@ -4,7 +4,7 @@
     <div class="jumbotron">
         <div class="container">
             <h2>欢迎来到Laravel App社区
-                <a class="btn btn-primary btn-lg pull-right" href="#" role="button">发表新帖子</a>
+                <a class="btn btn-primary btn-lg pull-right" href="/discussion/create" role="button">发表新帖子</a>
             </h2>
         </div>
     </div>
@@ -27,5 +27,7 @@
                 @endforeach
             </div>
         </div>
+        <hr>
+        {{ $discussions->links() }}
     </div>
 @endsection
