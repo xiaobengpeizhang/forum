@@ -1,27 +1,25 @@
-# Laravel PHP Framework
+# 基于laravel 5.2.31框架的社区论坛系统
 
-[![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
-[![Total Downloads](https://poser.pugx.org/laravel/framework/d/total.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/framework/v/stable.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Unstable Version](https://poser.pugx.org/laravel/framework/v/unstable.svg)](https://packagist.org/packages/laravel/framework)
-[![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)
+## 更新日志
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as authentication, routing, sessions, queueing, and caching.
+2017-06-17 
 
-Laravel is accessible, yet powerful, providing tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
+1. 创建user表和discussion表，并各填充30条测试数据
+2. 利用bootstrap搭建前台布局页面
+3. 创建路由，控制器，数据表模型并建立一对多关系
+4. 在控制器中向视图传递模型数据参数
 
-## Official Documentation
+## 心得体会
 
-Documentation for the framework can be found on the [Laravel website](http://laravel.com/docs).
+1. 善用<code>php artisan</code>工具，能用命令行搞定的不用手工创建。
 
-## Contributing
+* <code>php artisan make:migration create_[tableName]_table -m</code> -> 创建数据表和相应的模型，<strong>务必一次搞定!!第二次删除重建时会报错！！</strong>
+* <code>php artisan migrate</code>  -> 填充数据
+* <code>php artisan make:controller</code> ->创建控制器
+* <code>php artisan tinker</code> -> 数据库交互工具
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
+2. 一次创建多条路由时候，可以用resource方法，并用命令行查看路由和控制器方法的对应关系。
 
-## Security Vulnerabilities
+* <code>Route::resource('article','articleController');</code>
+* <code>php artisan route:list</code>
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
