@@ -92,8 +92,14 @@ return [
     */
 
     'custom' => [
-        'attribute-name' => [
-            'rule-name' => 'custom-message',
+        'name' => [
+            'required' => '用户名不能为空',
+        ],
+        'email' => [
+            'required' => '邮箱地址不能为空',
+        ],
+        'password' => [
+            'required' => '密码不能为空',
         ],
     ],
 

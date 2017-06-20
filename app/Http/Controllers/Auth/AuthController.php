@@ -67,6 +67,7 @@ class AuthController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
+            'avatar' => 'http://lorempixel.com/256/256/?'.random_int(10000,99999)
         ]);
     }
 }

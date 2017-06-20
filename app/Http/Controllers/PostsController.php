@@ -14,4 +14,10 @@ class PostsController extends Controller
         $discussions = Discussion::all();
         return view('forum.index',compact('discussions'));
     }
+
+    //展示每个帖子页面详情
+    public function show($id){
+        $discussion = Discussion::findOrFail($id);
+        return view('forum.show',compact('discussion'));
+    }
 }
