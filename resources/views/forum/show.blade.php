@@ -13,7 +13,7 @@
                     </h4>
                     {{ $discussion->user->name }}
 
-                    <a class="btn btn-primary btn-lg pull-right" href="#" role="button">修改帖子</a>
+                    <a class="btn btn-primary btn-lg pull-right" href="/discussion/{{ $discussion->id }}/edit" role="button">修改帖子</a>
 
                 </div>
             </div>

@@ -53,4 +53,20 @@ class PostsController extends Controller
         return redirect()->action('PostsController@show',[$id = $discussion->id]);
     }
 
+    //修改帖子
+    public function edit($id){
+        $discussion = Discussion::findOrFail($id);
+        if(Auth::user()->id == $discussion->user_id){
+            return view('forum.edit',compact('discussion'));
+        }else{
+            return view('errors.errormsg')->with('massage','你不可以修改他人的帖子!');
+        }
+    }
+
+    public function update(StoreBlogPostRequest $request,$id){
+        $discussion = Discussion::findOrFail($id);
+        $discussion->update($request->all());
+        return redirect()->action('PostsController@show',['id' => $discussion->id ]);
+    }
+
 }
