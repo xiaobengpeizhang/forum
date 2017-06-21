@@ -22,6 +22,10 @@
                         <div class="media-body">
                             <h4 class="media-heading"><a href="/discussion/{{$discussion->id}}">{{ $discussion->title }}</a></h4>
                             {{ $discussion->user->name }}
+
+                            <div class="pull-right" style="font-size: 15px;height: 20px;width:100px">
+                                评论数：{!! count($discussion->comments) !!}
+                            </div>
                         </div>
                     </div>
                 @endforeach
