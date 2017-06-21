@@ -28,4 +28,8 @@ class User extends Authenticatable
         //实现user和disscussions的一对多关系
        return $this->hasMany(Discussion::class);
     }
+
+    public function comments(){
+        return $this->hasMany(Comment::class);
+    }
 }

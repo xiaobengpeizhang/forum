@@ -17,4 +17,5 @@ Route::auth();
 
 Route::get('/home', 'HomeController@index');
 Route::resource('discussion','PostsController');
+Route::resource('comment','CommentsController');
 

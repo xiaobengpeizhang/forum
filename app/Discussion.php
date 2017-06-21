@@ -13,4 +13,8 @@ class Discussion extends Model
         //一个discussion属于一个user，默认外键是user_id
        return $this->belongsTo(User::class,'user_id');
     }
+
+    public function comments(){
+        return $this->hasMany(Comment::class);
+    }
 }
