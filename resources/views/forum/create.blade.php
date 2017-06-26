@@ -1,6 +1,7 @@
 @extends('app')
 
 @section('content')
+    @include('editor::head')
     <div class="container" style="margin-top: 20px">
         <div class="row">
             <div class="col-md-8 col-md-offset-2" role="main">
@@ -12,7 +13,8 @@
                     </div>
                     <div class="form-group">
                         <label for="">内容</label>
-                        <textarea name="body" id="" cols="30" rows="10" class="form-control"></textarea>
+                            <textarea name="body" id="myEditor" cols="25" rows="10" class="form-control"></textarea>
+
                     </div>
                     <div>
                         <input type="submit" class="btn btn-primary pull-right" value="发表帖子">

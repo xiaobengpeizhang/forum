@@ -19,3 +19,6 @@ Route::get('/home', 'HomeController@index');
 Route::resource('discussion','PostsController');
 Route::resource('comment','CommentsController');
 
+Route::get('/user/avatar','UserController@avatar');
+Route::post('/user/avatar','UserController@update');
+

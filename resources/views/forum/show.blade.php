@@ -65,6 +65,6 @@
             </div>
         </div>
         <br>
-        <button onclick="history.go(-1)" class="btn btn-primary"><span class="glyphicon glyphicon-backward"></span> 返回</button>
+        <a href="/" class="btn btn-primary"><span class="glyphicon glyphicon-backward"></span> 返回</a>
     </div>
 @endsection
